@@ -21,7 +21,7 @@ jobs:
     - name: Ensure browsers are installed
       run: python -m playwright install --with-deps
     - name: Run your tests
-      run: python -m pytest --tracing=retain-on-failure --base_url https://duckduckgo.com
+      run: python -m pytest -n 2 --tracing=retain-on-failure --base_url https://duckduckgo.com
     - uses: actions/upload-artifact@v3
       if: always()
       with:
