@@ -102,3 +102,31 @@ def test_mytest():
 
     assert project, "No such project found"
     print(project)
+
+    text = '[1, 2, 3]'
+    parse = text.strip('[]').replace(' ', '').split(',')
+
+    parsed = [p for p in parse if p != '2']  # filter out list or find in list [0]
+    parsed = [int(p) for p in parse]  # map list to int
+
+    print(parsed)
+
+    parsed_to_str = [str(v) for v in parsed]
+    print(" ".join(parsed_to_str))
+
+    def testf(k, *args, **kwargs):
+        print(k)
+        print(args)
+        print(kwargs)
+
+        # better than filer with lambda
+        s = '12324'
+        suml = sum([int(n) for n in s])
+
+        print("suml", suml)
+
+    scores = [3, '5', 6]
+    testf("first param", scores, {1: "name", '2': 'dict'}, param=23)
+
+
+
